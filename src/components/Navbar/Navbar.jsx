@@ -7,11 +7,11 @@ const Navbar = () => {
 
   const navItem = [
     { name: "Home", path: "/" },
-    { name: "Apps", path: "/" },
-    { name: "Installation", path: "/" },
+    { name: "Apps", path: "/apps" },
+    { name: "Installation", path: "/installation" },
   ];
   const singleNavItem = navItem.map((item, index) => (
-    <NavLink key={index} className="md:mr-10 mb-2" to={item.link}>
+    <NavLink key={index} className="md:mr-10 mb-2" to={item.path}>
       {item.name}
     </NavLink>
   ));
@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className="btn flex md:flex-row flex-col">
       <NavLink
         className="btn bg-green-500 text-white mr-5 px-5 py-2 rounded-lg"
-        to={""}
+        to={"https://github.com/al-bariul"}
       >
         Contribute
       </NavLink>
@@ -44,7 +44,9 @@ const Navbar = () => {
             </div>
 
             {/* Logo */}
-            <p className="text-3xl font-bold">HERO.IO</p>
+            <NavLink to={"/"}>
+              <p className="text-3xl font-bold">HERO.IO</p>
+            </NavLink>
           </div>
 
           {/* Resonsive List & Responsive Buttons */}
