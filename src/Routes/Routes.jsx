@@ -6,6 +6,7 @@ import Apps from "../components/Apps/Apps";
 import Installation from "../components/Installation/Installation";
 import App from "../App";
 import AppsDetails from "../components/AppsDetails/AppsDetails";
+import Error from "../components/Error/Error";
 
 const fetchAppData = async () => {
   const response = await fetch("/data.json");
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    errorElement: <Error></Error>,
     children: [
       {
         index: true,
@@ -38,7 +40,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "appdetails/:id",
-        loader: () => fetch("data.json"),
+        loader: () => fetch("/data.json").then((response) => response.json()),
         Component: AppsDetails,
       },
       {
