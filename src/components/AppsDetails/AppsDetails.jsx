@@ -22,15 +22,24 @@ const AppsDetails = () => {
   } = singleApp;
 
   return (
-    <div>
-      <div className="appdetails-header">
-        <div className="left">
-          <img className="w-[200px] h-[300px] bg-red-300" src={image} alt="" />
+    <div className="bg-[#f8f2f2] text-black">
+      <div className="appdetails-header border-4 flex max-w-[1200px] mx-auto pt-16">
+        <div className="left mr-10">
+          <img
+            className="w-[350px] h-[250px] py-4 rounded-md bg-white"
+            src={image}
+            alt=""
+          />
         </div>
         <div className="right">
           <div className="header">
-            <h3>{title}</h3>
-            <p>Developed by {companyName}</p>
+            <h3 className="text-4xl font-bold">{title}</h3>
+            <p className="mt-2 font-semibold text-[#627382]">
+              Developed by{" "}
+              <span className="text-red-400 bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
+                {companyName}
+              </span>
+            </p>
           </div>
           <div className="body">
             <div className="downloads">
