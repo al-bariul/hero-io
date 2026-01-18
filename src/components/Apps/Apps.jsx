@@ -9,7 +9,10 @@ const Apps = ({ appPromise }) => {
       <h1>Apps</h1>
       <div className="grid grid-cols-4 gap-x-7 gap-y-3">
         {appsData.map((singleAppData) => (
-          <SingleAppsData singleAppData={singleAppData}></SingleAppsData>
+          <SingleAppsData
+            key={singleAppData.id}
+            singleAppData={singleAppData}
+          ></SingleAppsData>
         ))}
       </div>
     </div>

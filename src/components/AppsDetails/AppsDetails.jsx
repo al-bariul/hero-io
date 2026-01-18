@@ -5,10 +5,10 @@ const AppsDetails = () => {
   const appDetail = useLoaderData();
   const { id } = useParams();
   const appId = parseInt(id);
-  console.log(appId);
+  // console.log(appId);
 
   const singleApp = appDetail.find((app) => app.id === appId);
-  console.log(singleApp);
+  // console.log(singleApp);
 
   const {
     image,
