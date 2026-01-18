@@ -55,14 +55,14 @@ const ProductiveApps = () => {
       </div>
       {/* Footer */}
       <div className="footer bg-linear-to-r from-[#632EE3] to-[#9F62F2]">
-        <div className="max-w-[1200px] mx-auto pb-14">
+        <div className="w-[80vw] mx-auto pb-14">
           <h2
             className="text-5xl font-semibold
           mt-14 mb-10 w-full text-center"
           >
             Trusted by Millions, Built for You
           </h2>
-          <div className="grid grid-cols-3 gap-x-10 text-center  w-[1000px]">
+          <div className="grid grid-cols-3 gap-x-10 text-center w-full">
             <div className="total-downloads">
               <p>Total Downloads</p>
               <p className="text-5xl mt-2 mb-2 font-bold">29.6M</p>
