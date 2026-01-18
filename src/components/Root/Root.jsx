@@ -11,12 +11,13 @@ const Root = () => {
       <header className="bg-white">
         <Navbar></Navbar>
       </header>
-      <main className="bg-[#D2D2D2]">
+      {/* <main className="bg-[#f8f2f2]">
         <ProductiveApps></ProductiveApps>
-      </main>
+      </main> */}
 
       {/* Children */}
-      <div className="max-w-[1200px] mx-auto">
+      {/* <div className="max-w-[1200px] mx-auto"> */}
+      <div className="">
         <Outlet></Outlet>
       </div>
 
