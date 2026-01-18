@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router";
 
-const HomePageUI = ({ homeData }) => {
-  //   console.log(homeData);
-  const { image, title, ratingAvg, downloads, id } = homeData;
+const SingleAppsData = ({ singleAppData }) => {
+  //   console.log(singleAppData);
+  const { image, title, ratingAvg, downloads, id } = singleAppData;
   return (
     <Link to={`/appdetails/${id}`}>
-      <div className="border-3 border-amber-500">
+      <div>
         <img className="h-[315px] bg-red-400" src={image}></img>
         <p>{title}</p>
         <div className="flex justify-between">
@@ -18,4 +18,4 @@ const HomePageUI = ({ homeData }) => {
   );
 };
 
-export default HomePageUI;
+export default SingleAppsData;
