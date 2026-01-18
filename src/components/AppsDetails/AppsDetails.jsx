@@ -1,5 +1,8 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import downloadPng from "../../assets/icon-downloads.png";
+import rating from "../../assets/icon-ratings.png";
+import review from "../../assets/icon-review.png";
 
 const AppsDetails = () => {
   const appDetail = useLoaderData();
@@ -19,6 +22,7 @@ const AppsDetails = () => {
     downloads,
     ratings,
     description,
+    size,
   } = singleApp;
 
   return (
@@ -41,19 +45,25 @@ const AppsDetails = () => {
               </span>
             </p>
           </div>
-          <div className="body">
+          <div className="body flex justify-between gap-x-10 pt-3">
             <div className="downloads">
-              <p>Downloads</p>
-              <p>{downloads / 1000000}M</p>
+              <img src={downloadPng} alt="" />
+              <p className="text-[#627382] pt-1">Downloads</p>
+              <p className="text-2xl font-bold">{downloads / 1000000}M</p>
             </div>
             <div className="average-rating">
-              <p>Average Ratings</p>
-              <p>{ratingAvg}</p>
+              <img src={rating} alt="" />
+              <p className="text-[#627382] pt-1">Average Ratings</p>
+              <p className="text-2xl font-bold">{ratingAvg}</p>
             </div>
             <div className="total-reviews">
-              <p>Total Reviews</p>
-              <p>{reviews}</p>
+              <img src={review} alt="" />
+              <p className="text-[#627382] pt-1">Total Reviews</p>
+              <p className="text-2xl font-bold">{reviews}</p>
             </div>
+          </div>
+          <div className="btn mt-2 bg-[#00D390] border-none text-[17px]">
+            <button>Install Now {size}</button>
           </div>
         </div>
       </div>
