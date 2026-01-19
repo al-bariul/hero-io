@@ -3,6 +3,7 @@ import { Link } from "react-router";
 
 const SingleAppsData = ({ singleAppData }) => {
   const { image, title, ratingAvg, downloads, id } = singleAppData;
+
   return (
     <Link to={`/appdetails/${id}`}>
       <div className="h-[300px] p-3 bg-white shadow-md rounded-xl">
