@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import downloadPng from "../../assets/icon-downloads.png";
 import rating from "../../assets/icon-ratings.png";
@@ -33,6 +33,8 @@ const AppsDetails = () => {
     description,
     size,
   } = singleApp;
+
+  const [install, setInstall] = useState(true);
 
   return (
     <div className="bg-[#f8f2f2] text-black">
@@ -71,8 +73,19 @@ const AppsDetails = () => {
               <p className="text-2xl font-bold">{reviews}</p>
             </div>
           </div>
-          <div className="btn mt-2 bg-[#00D390] border-none text-[17px]">
-            <button>Install Now {size}</button>
+          <div>
+            <button
+              disabled={!install}
+              className={`btn mt-2 border-none text-[17px] transition-all 
+      ${
+        install
+          ? "bg-[#00D390] text-white cursor-pointer"
+          : "bg-[#00D390] text-white cursor-not-allowed"
+      }`}
+              onClick={() => install && setInstall(false)}
+            >
+              {install ? `Install Now (${size}MB)` : "Installed"}
+            </button>
           </div>
         </div>
       </div>

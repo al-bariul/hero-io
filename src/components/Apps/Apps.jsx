@@ -44,7 +44,7 @@ const Apps = ({ appPromise }) => {
               <input
                 type="search"
                 className="grow outline-none w-full"
-                placeholder="Search app name..."
+                placeholder="Search app"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)} // টাইপ করার সাথে সাথে স্টেট আপডেট হবে
               />
