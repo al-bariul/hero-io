@@ -12,15 +12,15 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { addToStoreDB } from "../Utility/addToDB";
 
 const AppsDetails = () => {
   const appDetail = useLoaderData();
   const { id } = useParams();
   const appId = parseInt(id);
-  // console.log(appId);
 
   const singleApp = appDetail.find((app) => app.id === appId);
-  // console.log(singleApp);
+
 
   const {
     image,
@@ -35,6 +35,18 @@ const AppsDetails = () => {
   } = singleApp;
 
   const [install, setInstall] = useState(true);
+
+  const handleMarkAsInstall = (id) => {
+    addToStoreDB(id);
+  };
+
+  const handleInstallClick = (id) => {
+    if (install) {
+      setInstall(false);
+      handleMarkAsInstall(id);
+      console.log(`App ${id} is being installed...`);
+    }
+  };
 
   return (
     <div className="bg-[#f8f2f2] text-black">
@@ -82,7 +94,7 @@ const AppsDetails = () => {
           ? "bg-[#00D390] text-white cursor-pointer"
           : "bg-[#00D390] text-white cursor-not-allowed"
       }`}
-              onClick={() => install && setInstall(false)}
+              onClick={() => handleInstallClick(id)}
             >
               {install ? `Install Now (${size}MB)` : "Installed"}
             </button>
@@ -90,7 +102,6 @@ const AppsDetails = () => {
         </div>
       </div>
 
-      {/* Recharts */}
       <div className="appdetails-body">
         <div className="max-w-[1200px] mx-auto mt-10">
           <h2 className="text-2xl font-bold">Ratings</h2>

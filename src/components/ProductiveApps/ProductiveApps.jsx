@@ -8,7 +8,6 @@ const ProductiveApps = () => {
   return (
     <div>
       <div className="max-w-[1200px] mx-auto">
-        {/* Header */}
         <div className="header pt-10">
           <h1 className="text-[#001931] text-center text-7xl font-bold">
             We Build <br />{" "}
@@ -19,7 +18,6 @@ const ProductiveApps = () => {
           </h1>
         </div>
 
-        {/* Body */}
         <div className="body">
           <p className="text-[#627382] text-center pt-5 text-xl">
             At HERO.IO , we craft innovative apps designed to make everyday life
@@ -48,12 +46,11 @@ const ProductiveApps = () => {
           </div>
         </div>
 
-        {/* Image */}
         <div className="mt-5 image flex items-center justify-center">
           <img src={HeroImg} alt="" />
         </div>
       </div>
-      {/* Footer */}
+
       <div className="footer bg-linear-to-r from-[#632EE3] to-[#9F62F2]">
         <div className="w-[80vw] mx-auto pb-14">
           <h2

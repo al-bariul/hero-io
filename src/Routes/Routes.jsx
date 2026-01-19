@@ -45,7 +45,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/installation",
-        Component: Installation,
+        element: (
+          <Suspense fallback={<h1>Installation...</h1>}>
+            <Installation appPromise={appPromise}></Installation>
+          </Suspense>
+        )
       },
     ],
   },

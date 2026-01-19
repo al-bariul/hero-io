@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router";
 
 const HomePageUI = ({ homeData }) => {
-  //   console.log(homeData);
   const { image, title, ratingAvg, downloads, id } = homeData;
   return (
     <Link to={`/appdetails/${id}`}>

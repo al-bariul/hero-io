@@ -23,7 +23,7 @@ const Navbar = () => {
   ));
 
   const btn = () => (
-    <div className="border-2 border-amber-800">
+    <div className="border-amber-800">
       <NavLink
         className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] mr-5 px-5 py-2 rounded-lg"
         to={"https://github.com/al-bariul"}
@@ -37,11 +37,8 @@ const Navbar = () => {
   return (
     <div>
       <nav className="bg-white flex items-center justify-between max-w-[1200px] mx-auto h-16">
-        {/* Responsiveness */}
         <div className="logo">
-          {/* Responsive Icons & Logo */}
           <div className="menu-bar flex items-center justify-center">
-            {/* Responsive icons */}
             <div onClick={() => setOpen(!open)} className="mt-1">
               {open ? (
                 <X className="md:hidden text-black"></X>
@@ -50,7 +47,6 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Logo */}
             <NavLink to={"/"} className={"flex items-center"}>
               <img className="max-w-12" src={Logo} alt="" />
               <p className="text-3xl font-bold bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent">
@@ -58,27 +54,19 @@ const Navbar = () => {
               </p>
             </NavLink>
           </div>
-
-          {/* Resonsive List & Responsive Buttons */}
           <div
             className={`responsive md:hidden absolute  bg-white duration-300 ${
               open ? "top-16" : "-top-70"
             }`}
           >
-            {/* Responsive List */}
             <ul className="flex flex-col items-center justify-center p-8">
               {singleNavItem}
             </ul>
-
-            {/* Responsive Button */}
             <div className="">{btn()}</div>
           </div>
         </div>
 
-        {/* Big Screen Lists */}
         <ul className="md:flex hidden">{singleNavItem}</ul>
-
-        {/* Big Screen Buttons */}
         <div className="hidden md:inline-block">{btn()}</div>
       </nav>
     </div>

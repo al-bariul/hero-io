@@ -6,10 +6,9 @@ import ProductiveApps from "../ProductiveApps/ProductiveApps";
 const Home = ({ appPromise }) => {
   const appData = use(appPromise);
   const homePageEightData = appData.slice(0, 8);
-  //   console.log(homePageEightData);
+
   return (
     <div className="bg-[#f8f2f2]">
-      {/* <h1>Home</h1> */}
       <main className="bg-[#f8f2f2]">
         <ProductiveApps></ProductiveApps>
       </main>
